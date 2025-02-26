@@ -85,7 +85,7 @@ actor {
       public query func totalTarefasEmAndamento() : async Nat {
         var count : Nat = 0;
         for (tarefa in tarefas.vals()) {
-          if (not tarefa.concluida) {
+          if (not tarefa.concluida) { // se não for da categoria concluida conta + 
             count += 1;
           }
         };
@@ -96,7 +96,7 @@ actor {
       public query func totalTarefasConcluidas() : async Nat {
         var count : Nat = 0;
         for (tarefa in tarefas.vals()) {
-          if (tarefa.concluida) {
+          if (tarefa.concluida) { // se for da categoria concluida conta +
             count += 1;
           }
         };
