@@ -81,4 +81,25 @@ actor {
           return Buffer.toArray(tarefas);
         };  
 
+      // Função para contar tarefas em andamento (concluida == false)
+      public query func totalTarefasEmAndamento() : async Nat {
+        var count : Nat = 0;
+        for (tarefa in tarefas.vals()) {
+          if (not tarefa.concluida) {
+            count += 1;
+          }
+        };
+        return count;
+      };
+
+      // Função para contar tarefas concluídas (concluida == true)
+      public query func totalTarefasConcluidas() : async Nat {
+        var count : Nat = 0;
+        for (tarefa in tarefas.vals()) {
+          if (tarefa.concluida) {
+            count += 1;
+          }
+        };
+        return count;
+      };
 };
